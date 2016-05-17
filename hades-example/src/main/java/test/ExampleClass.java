@@ -1,7 +1,7 @@
 package test;
 
-import com.feng.hades.client.annotations.TraceClass;
-import com.feng.hades.client.annotations.TraceMethod;
+import com.egb.hades.client.annotations.TraceClass;
+import com.egb.hades.client.annotations.TraceMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

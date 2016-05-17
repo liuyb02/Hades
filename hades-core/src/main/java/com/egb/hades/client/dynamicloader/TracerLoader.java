@@ -1,14 +1,13 @@
-package com.feng.hades.client.dynamicloader;
+package com.egb.hades.client.dynamicloader;
 
-import com.feng.hades.tracer.Tracer;
-import com.feng.hades.tracer.TracerAdapter;
-import lombok.extern.slf4j.Slf4j;
+import com.egb.hades.tracer.TracerAdapter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.instrument.Instrumentation;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -23,9 +22,9 @@ import java.util.jar.JarFile;
 /**
  * Created by Liuyb on 2015/10/22.
  */
-@Slf4j
 public class TracerLoader implements Runnable {
-    private static  String TRACER_JAR_PATH = "D:\\workspace\\feng-hades\\out\\artifacts\\hades_tracer_jar\\hades-tracer.jar";
+    private static Logger log = LoggerFactory.getLogger(TracerLoader.class);
+    private static  String TRACER_JAR_PATH = "D:\\workspace\\egb-hades\\out\\artifacts\\hades_tracer_jar\\hades-tracer.jar";
     private static int TRACER_REFRESH_INTERVAL = 0;
     CountDownLatch latch = null;
     long lastModifiedTime = 0;
