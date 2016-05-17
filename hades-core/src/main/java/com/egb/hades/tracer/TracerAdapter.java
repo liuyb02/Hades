@@ -1,6 +1,6 @@
-package com.feng.hades.tracer;
+package com.egb.hades.tracer;
 
-import com.feng.hades.client.context.SessionContext;
+import com.egb.hades.client.context.SessionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,7 @@ public class TracerAdapter implements Tracer {
     private final static ReadWriteLock lock = new ReentrantReadWriteLock();
 
     private final static String tracerName = "TracerAdapter";
-    private final String pkgPrefix = "com.feng.hades.tracer.";
+    private final String pkgPrefix = "com.egb.hades.tracer.";
 
     public String getTracerName(){
         return tracerName;

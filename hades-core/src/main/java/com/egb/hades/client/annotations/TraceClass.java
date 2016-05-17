@@ -1,4 +1,4 @@
-package com.feng.hades.client.annotations;
+package com.egb.hades.client.annotations;
 
 import java.lang.annotation.*;
 

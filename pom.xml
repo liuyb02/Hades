@@ -2,18 +2,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>feng-Hades</groupId>
-  <artifactId>feng-Hades</artifactId>
+  <groupId>com.egb</groupId>
+  <artifactId>Hades</artifactId>
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>hades-core</module>
     <module>hades-agent</module>
     <module>hades-tracer</module>
-    <module>hades-test</module>
+    <module>hades-example</module>
   </modules>
   <packaging>pom</packaging>
 
-  <name>feng-Hades</name>
+  <name>Hades</name>
   <url>http://maven.apache.org</url>
   <properties>
     <spring.version>4.1.6.RELEASE</spring.version>

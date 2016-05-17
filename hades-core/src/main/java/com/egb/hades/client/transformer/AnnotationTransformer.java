@@ -1,8 +1,8 @@
-package com.feng.hades.client.transformer;
+package com.egb.hades.client.transformer;
 
 
-import com.feng.hades.client.annotations.TraceClass;
-import com.feng.hades.client.annotations.TraceMethod;
+import com.egb.hades.client.annotations.TraceClass;
+import com.egb.hades.client.annotations.TraceMethod;
 import javassist.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +16,8 @@ import java.security.ProtectionDomain;
  * Created by Liuyb on 2015/10/8.
  * 实现通过注解方式对加载前的类动态修改
  */
-public class MethodNameTransformer implements ClassFileTransformer {
-    private Logger logger = LoggerFactory.getLogger(MethodNameTransformer.class);
+public class AnnotationTransformer implements ClassFileTransformer {
+    private Logger logger = LoggerFactory.getLogger(AnnotationTransformer.class);
     private ClassPool classPool = ClassPool.getDefault();
 
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
@@ -70,9 +70,9 @@ public class MethodNameTransformer implements ClassFileTransformer {
     }
 
     private void addPackageImport() {
-        classPool.importPackage("com.feng.hades.tracer.Tracer");
-        classPool.importPackage("com.feng.hades.tracer.TracerAdapter");
-        classPool.importPackage("com.feng.hades.client.context.SessionContext");
+        classPool.importPackage("Tracer");
+        classPool.importPackage("TracerAdapter");
+        classPool.importPackage("SessionContext");
     }
 
     private void addGlobalVariables(ClassPool pool, CtClass ctClass, String className) throws NotFoundException, CannotCompileException {
@@ -93,7 +93,7 @@ public class MethodNameTransformer implements ClassFileTransformer {
 
     private void addMethodLocalVariables(CtMethod method) throws CannotCompileException, NotFoundException {
 
-        method.addLocalVariable("HADES_LOCAL_CONTEXT", classPool.getCtClass("com.feng.hades.tracer.Tracer"));
+        method.addLocalVariable("HADES_LOCAL_CONTEXT", classPool.getCtClass("Tracer"));
 
     }
 
